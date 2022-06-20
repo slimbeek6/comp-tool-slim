@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="home/about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Offer Management
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        #   Will need a filter based on user type to direct to the correct dashboard
+            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#">Compensation Range Lookup</a></li>
+        #   Will need to hide New Offer when non-recruiter login
+            <li><a class="dropdown-item" href="#">Create Offer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Offer Analytics
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            # Need a switch to show different version of analytics pages by user type
+            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+            <li><a class="dropdown-item" href="#">Reports</a></li>
+            # only visible to HR analysts:
+            <li><a class="dropdown-item" href="#">Update Range Data</a></li>
+          </ul>
+        </li>
+      </ul>
+    #   Will need to add functionality to change to a link to the user profile once user logins have been created
+      <ul class="d-flex navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
