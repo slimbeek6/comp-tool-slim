@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  country: MyString
+  city: MyString
+  location_code: MyString
+  salary_band: MyString
+  equity_band: MyString
+
+two:
+  country: MyString
+  city: MyString
+  location_code: MyString
+  salary_band: MyString
+  equity_band: MyString
