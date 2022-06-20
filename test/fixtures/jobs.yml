@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_code: 1
+  job_group: MyString
+  job_subgroup: MyString
+  job_name: MyString
+  job_level: MyString
+  technical: false
+
+two:
+  job_code: 1
+  job_group: MyString
+  job_subgroup: MyString
+  job_name: MyString
+  job_level: MyString
+  technical: false
