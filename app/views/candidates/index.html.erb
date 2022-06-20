@@ -1,14 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Candidates</h1>
+<h1 class="header">Candidates</h1>
 
-<div id="candidates">
-  <% @candidates.each do |candidate| %>
-    <%= render candidate %>
-    <p>
-      <%= link_to "Show this candidate", candidate %>
-    </p>
-  <% end %>
-</div>
+
+<table id = "candidates" class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Job Code</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.first_name %></td>
+        <td><%= candidate.last_name %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.phone %></td>
+        <td><%= candidate.job_code %></td>
+        <td><%= link_to "Show this candidate", candidate %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
+
 
 <%= link_to "New candidate", new_candidate_path %>

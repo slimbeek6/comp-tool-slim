@@ -2,13 +2,30 @@
 
 <h1>Locations</h1>
 
-<div id="locations">
-  <% @locations.each do |location| %>
-    <%= render location %>
-    <p>
-      <%= link_to "Show this location", location %>
-    </p>
-  <% end %>
-</div>
+<table id = "locations" class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Location Code</th>
+      <th>Salary Band</th>
+      <th>Equity Band</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.country %></td>
+        <td><%= location.city %></td>
+        <td><%= location.location_code %></td>
+        <td><%= location.salary_band %></td>
+        <td><%= location.equity_band %></td>
+        <td><%= link_to "Show this location", location %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to "New location", new_location_path %>

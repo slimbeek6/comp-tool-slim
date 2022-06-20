@@ -1,14 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Jobs</h1>
+<h1>Jobs List</h1>
 
-<div id="jobs">
-  <% @jobs.each do |job| %>
-    <%= render job %>
-    <p>
-      <%= link_to "Show this job", job %>
-    </p>
-  <% end %>
-</div>
+
+<form>
+  <input type="text" placeholder="Filter by Group" name="group"></input>
+  <button type="submit">Search</button>
+</form>
+
+<br/>
+
+<table id = "jobs" class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Job Code</th>
+      <th>Job Group</th>
+      <th>Job Sub-Group</th>
+      <th>Job Name</th>
+      <th>Job Level</th>
+      <th>Technical?</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.job_code %></td>
+        <td><%= job.job_group %></td>
+        <td><%= job.job_subgroup %></td>
+        <td><%= job.job_name %></td>
+        <td><%= job.job_level %></td>
+        <td><%= job.technical %></td>
+        <td><%= link_to "Show this job", job %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to "New job", new_job_path %>
