@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= link_to 'Comp Tool', root_path, class:"navbar-brand" %>
+    <%= link_to 'Comp Tool', root_path, class: "navbar-brand" %>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,19 +10,18 @@
         <li class="nav-item">
           <%= link_to 'About', home_about_path, class:"nav-link" %>
         </li>
+        <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Offer Management
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Candidate Dashboard', candidates_path, class:"dropdown-item" %>
-            <li><a class="dropdown-item" href="#">Offer Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Create Offer</a></li>
-            <li><a class="dropdown-item" href="#">Compensation Range Lookup</a></li>
-            <%= link_to 'Full Job List', jobs_path, class:"dropdown-item" %>
-            <%= link_to 'Full Location List', locations_path, class:"dropdown-item" %>
-
-            #   Will need a filter based on user type to direct to the correct dashboard
+            <li class="dropdown-item">Offer Dashboard</li>
+            <li class="dropdown-item">Create Offer</li>
+            <li class="dropdown-item">Compensation Range Lookup</li>
+            <li><%= link_to 'Full Job List', jobs_path, class:"dropdown-item" %></li>
+            <li><%= link_to 'Full Location List', locations_path, class:"dropdown-item" %></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -30,16 +29,17 @@
             Offer Analytics
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            # Need a switch to show different version of analytics pages by user type
-            <li><a class="dropdown-item" href="#">Analytics Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Reports</a></li>
-            <li><a class="dropdown-item" href="#">Open Position List</a></li>
+            <li class="dropdown-item">Analytics Dashboard</li>
+            <li class="dropdown-item">Reports</li>
+            <li class="dropdown-item">Open Position List</li>
           </ul>
         </li>
-      </ul>
-    #   Will need to add functionality to change to a link to the user profile once user logins have been created
-      <ul class="d-flex navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        <li class="d-flex flex-nowrap nav-item"><%= link_to 'Edit Profile', edit_user_registration_path, class:"nav-link" %></li>
+        <li class="d-flex nav-item"><%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:"nav-link" %></li>
+        <% else %>
+          <li class=" nav-item flex-nowrap"><%= link_to 'Sign Up', new_user_registration_path, class:"nav-link" %></li>
+          <li class="d-flex nav-item"><%= link_to 'Login', new_user_session_path, class:"nav-link" %></li>
+        <% end %>
       </ul>
     </div>
   </div>
