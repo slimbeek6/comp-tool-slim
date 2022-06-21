@@ -11,32 +11,47 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
-  </div>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
-  </div>
+  <card class="card">
+    <legend class="centered card-header"> Enter New Data Below</legend>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="card-body">
+      <div>
+        <%= form.label :first_name, style: "display: block, text-weight: bold", class:"form-label" %>
+        <%= form.text_field :first_name, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
+      <br/>
 
-  <div>
-    <%= form.label :job_code, style: "display: block" %>
-    <%= form.number_field :job_code %>
-  </div>
+      <div>
+        <%= form.label :last_name, style: "display: block", class:"form-label" %>
+        <%= form.text_field :last_name, class:"form-control" %>
+      </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+      <br/>
+
+      <div>
+        <%= form.label :email, style: "display: block", class:"form-label" %>
+        <%= form.text_field :email, class:"form-control" %>
+      </div>
+
+      <br/>
+
+      <div>
+        <%= form.label :phone, style: "display: block", class:"form-label" %>
+        <%= form.text_field :phone, class:"form-control" %>
+      </div>
+
+      <br/>
+
+      <div>
+        <%= form.label :job_code, style: "display: block", class:"form-label" %>
+        <%= form.number_field :job_code, class:"form-control" %>
+      </div>
+    </div>
+    <div class="card-footer centered">
+      <%= form.submit 'Submit', :class => "btn btn-success" %>
+      <%= link_to 'Return to Candidate List', candidates_path, class:"btn btn-primary" %>
+    </div>
+  </card>
 <% end %>

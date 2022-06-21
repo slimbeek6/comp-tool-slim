@@ -26,3 +26,7 @@
   background-color: lightgray;
   padding: 1rem 0;
 }
+
+.form-label {
+  font-weight: bold;
+}
