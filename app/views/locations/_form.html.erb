@@ -10,33 +10,46 @@
       </ul>
     </div>
   <% end %>
+    
+  <card class="card">
+    
+    <legend class="centered card-header">Edit the Selected Location</legend>
 
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
-  </div>
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :country, style: "display: block", class: "form-label" %>
+        <%= form.text_field :country, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
+      <div>
+        <%= form.label :city, style: "display: block", class: "form-label" %>
+        <%= form.text_field :city, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :location_code, style: "display: block" %>
-    <%= form.text_field :location_code %>
-  </div>
+      <br/>
 
-  <div>
-    <%= form.label :salary_band, style: "display: block" %>
-    <%= form.text_field :salary_band %>
-  </div>
+      <div>
+        <%= form.label :location_code, style: "display: block", class: "form-label" %>
+        <%= form.text_field :location_code, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :equity_band, style: "display: block" %>
-    <%= form.text_field :equity_band %>
-  </div>
+      <br/>
 
-  <div>
-    <%= form.submit %>
-  </div>
+      <div>
+        <%= form.label :salary_band, style: "display: block", class: "form-label" %>
+        <%= form.text_field :salary_band, class: "form-control" %>
+      </div>
+
+      <br/>
+
+      <div>
+        <%= form.label :equity_band, style: "display: block", class: "form-label" %>
+        <%= form.text_field :equity_band, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-footer centered">
+      <button class="btn btn-success">Submit<% form.submit %></button>
+      <button class="btn btn-secondary">Show Location<% link_to "Show this location", @location %></button>
+      <button class="btn btn-primary">Back to Locations<% link_to "Back to locations", locations_path %></button>
+    </div>
 <% end %>
