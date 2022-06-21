@@ -1,32 +1,39 @@
-<div id="<%= dom_id job %>">
+<div id="<%= dom_id job %>" class="card">
+  <h3 class="card-header centered">Current Location</h3>
+  <div class="card-body">
   <p>
-    <strong>Job code:</strong>
+    <strong>Job Code:</strong>
     <%= job.job_code %>
   </p>
 
   <p>
-    <strong>Job group:</strong>
+    <strong>Job Group:</strong>
     <%= job.job_group %>
   </p>
 
   <p>
-    <strong>Job subgroup:</strong>
+    <strong>Job Sub-Group:</strong>
     <%= job.job_subgroup %>
   </p>
 
   <p>
-    <strong>Job name:</strong>
+    <strong>Job Name:</strong>
     <%= job.job_name %>
   </p>
 
   <p>
-    <strong>Job level:</strong>
+    <strong>Job Level:</strong>
     <%= job.job_level %>
   </p>
 
   <p>
-    <strong>Technical:</strong>
+    <strong>Technical?:</strong>
     <%= job.technical %>
   </p>
-
+  </div>
+  <div class="card-footer row" style="--bs-gutter-x: 0">
+    <div class="col-4 centered"><%= link_to "Edit this job", edit_job_path(@job), class:"btn btn-primary"%></div>      
+    <div class="col-4 centered"><%= link_to "Back to Jobs List", jobs_path, class:"btn btn-secondary" %></div>
+    <div class="col-4 centered"><%= link_to "Destroy this job", @job, method: :delete, class:"btn btn-danger" %></div>
+  </div>
 </div>

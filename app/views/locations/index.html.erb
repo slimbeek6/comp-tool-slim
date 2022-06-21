@@ -12,7 +12,7 @@
       <th>Location Code</th>
       <th>Salary Band</th>
       <th>Equity Band</th>
-      <th colspan="3">Manage</th>
+      <th colspan="2">Manage</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +25,6 @@
         <td class="centered"><%= location.equity_band %></td>
         <td class="centered"><%= link_to 'Show', location %></td>
         <td class="centered"><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td class="centered"><%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>        
       </tr>
     <% end %>
   </tbody>

@@ -13,7 +13,7 @@
     
   <card class="card">
     
-    <legend class="centered card-header">Enter Data Below</legend>
+    <legend class="centered card-header">Enter New Data Below</legend>
 
     <div class="card-body">
       <div>
@@ -49,9 +49,9 @@
         <%= form.text_field :equity_band, class: "form-control" %>
       </div>
     </div>
-    <div class="form-footer centered">
-      <button class="btn btn-success">Submit<% form.submit %></button>
-      <button class="btn btn-secondary">Show Location<% link_to "Show this location", @location %></button>
-      <button class="btn btn-primary">Back to Locations<% link_to "Back to locations", locations_path %></button>
+    <div class="card-footer centered">
+      <%= form.button 'Submit', :class => "btn btn-success" %>
+      <%= link_to 'Back to Locations list', locations_path, class:"btn btn-primary" %>
     </div>
+  </card>
 <% end %>
