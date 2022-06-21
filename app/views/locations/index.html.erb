@@ -1,16 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Locations</h1>
-
-<table id = "locations" class="table table-striped">
-  <thead class="thead-dark">
+<h1 class="centered">Locations</h1>
+<br/><br/>
+<div class="alert alert-warning centered" role="alert">The current list of locations is as of June 20th, 2022. The next update to location, salary, and equity bands will take place September 15th, 2022.</div>
+<br/>
+<table id = "locations" class="table table-striped table-bordered table-hover">
+  <thead class="thead centered ">
     <tr>
       <th>Country</th>
       <th>City</th>
       <th>Location Code</th>
       <th>Salary Band</th>
       <th>Equity Band</th>
-      <th></th>
+      <th colspan="3">Manage</th>
     </tr>
   </thead>
   <tbody>
@@ -18,14 +20,16 @@
       <tr>
         <td><%= location.country %></td>
         <td><%= location.city %></td>
-        <td><%= location.location_code %></td>
-        <td><%= location.salary_band %></td>
-        <td><%= location.equity_band %></td>
-        <td><%= link_to "Show this location", location %></td>
+        <td class="centered"><%= location.location_code %></td>
+        <td class="centered"><%= location.salary_band %></td>
+        <td class="centered"><%= location.equity_band %></td>
+        <td class="centered"><%= link_to 'Show', location %></td>
+        <td class="centered"><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td class="centered"><%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 
-<%= link_to "New location", new_location_path %>
+<%= link_to "New location", new_location_path , class:"btn btn-secondary" %>
