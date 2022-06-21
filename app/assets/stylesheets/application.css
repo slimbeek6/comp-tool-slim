@@ -15,9 +15,14 @@
  */
 
  .centered {
-    text-align: center;
-  }
+  text-align: center;
+}
 
-  .thead {
-      background-color: lightblue;
-  }
+.thead {
+  background-color: lightblue;
+}
+
+.footer {
+  background-color: lightgray;
+  padding: 1rem 0;
+}
